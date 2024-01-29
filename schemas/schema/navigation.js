@@ -9,47 +9,74 @@ export default {
       title: 'Title'
     }, 
     {
-      name: 'logo', 
-      type: 'image', 
-      title: 'Logo', 
+      name: 'availability', 
+      type: 'boolean', 
+      title: 'Available'
+    },
+    {
+      name: 'navigationLinks',
+      type: 'object', 
+      title: 'Navigation Links',
       fields: [
         {
-          name: 'alt', 
-          type: 'string', 
-          title: 'Alternative text'
-        }
-      ]
-    }, 
-    {
-      name: 'nav_items', 
-      type: 'array', 
-      title: 'Navigation menu',
-      validation: Rule => Rule.unique(),
-      of: [
+          name: 'leftNavItems', 
+          type: 'array', 
+          title: 'Navigation items left',
+          validation: Rule => Rule.unique(),
+          of: [
+            {
+              name: 'link', 
+              type: 'reference',
+              title: 'Link', 
+              to: [ 
+                { 
+                  type: 'work' 
+                }
+              ]
+            }
+          ] 
+        }, 
         {
-          name: 'link', 
-          type: 'reference',
-          title: 'Link', 
-          to: [ 
-            { 
-              type: 'cases' 
-            },
-            { 
-              type: 'about' 
-            }, 
+          name: 'logo', 
+          type: 'image', 
+          title: 'Logo', 
+          fields: [
+            {
+              name: 'alt', 
+              type: 'string', 
+              title: 'Alternative text'
+            }
           ]
-        }
-      ] 
+        }, 
+        {
+          name: 'rightNavItems', 
+          type: 'array', 
+          title: 'Navigation items left',
+          validation: Rule => Rule.unique(),
+          of: [
+            {
+              name: 'link', 
+              type: 'reference',
+              title: 'Link', 
+              to: [ 
+                { 
+                  type: 'about' 
+                }
+              ]
+            }
+          ] 
+        }, 
+      ]
+    },
+    {
+      name: 'professionLeft', 
+      type: 'string', 
+      title: 'Profession left (first word)'
     }, 
     {
-      name: 'topRightOne', 
+      name: 'professionRight', 
       type: 'string', 
-      title: 'Top right (first word)'
-    }, 
-    {
-      name: 'topRightTwo', 
-      type: 'string', 
-      title: 'top right (last word)'
+      title: 'Profession right (last word)'
     }
   ]
 }

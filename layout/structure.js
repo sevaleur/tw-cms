@@ -5,6 +5,7 @@ import { MdPortrait } from "react-icons/md"
 import { TfiGallery } from "react-icons/tfi"
 import { TfiMenu} from "react-icons/tfi"
 import { BiSolidNavigation } from 'react-icons/bi'
+import { PiLinkSimple } from "react-icons/pi";
 
 export const structure = (S) => 
   S.list()
@@ -32,6 +33,17 @@ export const structure = (S) =>
           .schemaType('navigation')
           .documentId('navigation')
         ),
+        S.listItem(
+          { 
+            icon: PiLinkSimple
+          }
+        )
+        .title('Footer')
+        .child(
+          S.document()
+          .schemaType('footer')
+          .documentId('footer')
+        ),
       S.listItem(
         { 
           icon: AiFillHome 
@@ -48,10 +60,10 @@ export const structure = (S) =>
           icon: MdPortrait
         }
       )
-      .title('Cases')
+      .title('Work')
       .child(
         S.list()
-          .title('Cases')
+          .title('Work')
           .items([
             S.listItem(
               {
@@ -61,8 +73,8 @@ export const structure = (S) =>
             .title('Menu')
             .child(
               S.document()
-                .schemaType('cases')
-                .documentId('cases')
+                .schemaType('work')
+                .documentId('work')
             ),
             S.listItem(
               {

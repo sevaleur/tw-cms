@@ -1,7 +1,7 @@
 export default {
-  name: 'cases', 
+  name: 'work', 
   type: 'document', 
-  title: 'Cases', 
+  title: 'Work', 
   fields: [
     {
       name: 'title', 
