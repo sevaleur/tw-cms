@@ -9,6 +9,24 @@ export default {
       title: 'Title'
     },
     {
+      name: 'emailIcon', 
+      type: 'image', 
+      title: 'Email icon', 
+      fields: [
+        {
+          name: 'alt', 
+          type: 'string', 
+          title: 'Alternative text'
+        }, 
+        {
+          name: 'email', 
+          type: 'string', 
+          title: 'Email adress',
+          validation: Rule => Rule.required().email()
+        }
+      ]
+    },
+    {
       name: 'contactInformation', 
       type: 'array', 
       title: 'Contact Icons & Links', 
@@ -25,7 +43,7 @@ export default {
             },
             {
               name: 'link', 
-              type: 'string', 
+              type: 'url', 
               title: 'Link'
             }
           ]
